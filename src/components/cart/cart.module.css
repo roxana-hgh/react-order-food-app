@@ -1,0 +1,46 @@
+.cartButton {
+    position: relative;
+}
+
+.cartButtonBadge {
+    position: absolute;
+    top: -5px;
+    right: -6px;
+    width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-offcanvas{
+    transition: all 0.8s ease-in-out;
+}
+
+.cart-offcanvas:before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.132);
+    
+}
+
+.cart-offcanvas-content {
+    width: 85%;
+    max-width: 350px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    z-index: 100;
+    background-color: #fff;
+    padding: 1em;
+    
+}
