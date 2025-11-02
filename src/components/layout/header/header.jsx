@@ -1,6 +1,6 @@
 import Cart from "../../cart/cart";
 
-function Header() {
+function Header(prop) {
     return ( 
         <header className="p-3  md:py-4 border-b">
             <div className=" flex justify-between">

@@ -2,8 +2,7 @@ import { useContext, useState } from "react";
 import styles from "./cart.module.css"
 import CartContext from "../../store/cart-context";
 
-function Cart() {
-    
+function Cart(prop) {
     const ctx = useContext(CartContext)
     const [isActive , setActive] = useState(false)
     const totalAmount = ctx.totalAmount.toFixed(2)
@@ -12,6 +11,15 @@ function Cart() {
     }
     const closeCartHandler = () => {
         setActive(false)
+    }
+
+    const OrderHandler = () => {
+        // close the cart UI
+        setActive(false)
+        // open checkout via context and pass checkout data
+        if (ctx.openCheckout) {
+            ctx.openCheckout({ items: ctx.items, totalAmount: totalAmount })
+        }
     }
 
     const removeItemHandler = (event) => {
@@ -59,7 +67,7 @@ function Cart() {
                                 <span className="font-bold">Total:</span>
                                 <span>${totalAmount}</span>
                             </div>
-                            <button disabled={!ctx.items.length}  className="px-5 py-1 mt-3 bg-orange-600 text-orange-50 border-orange-600 rounded-full w-full disabled:bg-orange-400">Order</button>
+                            <button disabled={!ctx.items.length} onClick={OrderHandler}  className="px-5 py-1 mt-3 bg-orange-600 text-orange-50 border-orange-600 rounded-full w-full disabled:bg-orange-400">Order</button>
                         </div>
                     </div>
 

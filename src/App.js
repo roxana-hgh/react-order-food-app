@@ -1,4 +1,5 @@
 import "./App.css";
+import CheckOut from "./components/checkout/checkout";
 import Header from "./components/layout/header/header";
 import HomePage from "./components/layout/home/homePage";
 import CartProvider from "./store/cartProvider";
@@ -11,6 +12,7 @@ function App() {
         <main>
           <HomePage></HomePage>
         </main>
+        <CheckOut></CheckOut>
       </CartProvider>
     </div>
   );

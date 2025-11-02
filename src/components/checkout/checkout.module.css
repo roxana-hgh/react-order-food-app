@@ -1,0 +1,31 @@
+.checkout-modal{
+    transition: all 0.8s ease-in-out;
+}
+
+.checkout-modal:before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.132);
+    
+}
+
+.checkout-modal-content {
+    width: 85%;
+    max-width: 500px;
+    height: 500px;
+    position: fixed;
+    top: calc(50% - 300px);
+    right: calc(50% - 250px);
+    z-index: 100;
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    overflow-y: auto;
+    
+}
